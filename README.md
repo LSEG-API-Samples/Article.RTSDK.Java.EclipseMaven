@@ -1,4 +1,4 @@
-# How to Set Up Real-Time SDK Java Application with Maven on the Eclipse ID
+# How to Set Up Real-Time SDK Java Application with Maven on the Eclipse IDE
 
 - version: 1.0.0
 - Last update: January 20222
@@ -11,15 +11,15 @@
 
 [Refinitiv Real-Time SDK (Java Edition)](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java) (RTSDK, formerly known as Elektron SDK) is a suite of modern and open source APIs that aim to simplify development through a strong focus on ease of use and standardized access to a broad set of Refinitiv proprietary content and services via the proprietary TCP connection named RSSL and proprietary binary message encoding format named OMM Message. The capabilities range from low latency/high-performance APIs right through to simple streaming Web APIs. 
 
-The SDK has been mavenized to support [Apache Maven](https://maven.apache.org/) and [Gradle](https://gradle.org/) build automation tools since version 1.2. This supported helps Java developers to build RTSDK Java application, manage its dependencies (Java Developers do not need to manual manage different versions of jar files anymore), and better collaboration in the team.
+The SDK has been mavenized to support [Apache Maven](https://maven.apache.org/) and [Gradle](https://gradle.org/) build automation tools since version 1.2. This supports helps Java developers to build the RTSDK Java application, manage its dependencies (Java Developers do not need to manually manage different versions of jar files anymore), and better collaboration in the team.
 
-The [previous article](https://developers.refinitiv.com/en/article-catalog/article/how-to-set-up-refinitiv-real-time-sdk-java-application-with-mave) ([Medium](https://wasin-waeosri.medium.com/how-to-deploy-and-run-real-time-java-application-with-maven-in-docker-58e66dd1e247)) shows how to set up and the EMA Java project with Maven via a command line. However, many Java developers are still using with the [Eclipse IDE](https://www.eclipse.org/),which is the classic, multi-features, and tons of plugins.  This example project shows how to create the RTSDK - Java's Maven project with Eclipse. Developer do not need to run any commands manually via command line. 
+The [previous article](https://developers.refinitiv.com/en/article-catalog/article/how-to-set-up-refinitiv-real-time-sdk-java-application-with-mave) ([Medium](https://wasin-waeosri.medium.com/how-to-deploy-and-run-real-time-java-application-with-maven-in-docker-58e66dd1e247)) shows how to set up the EMA Java project with Maven via a command line. However, many Java developers are still using the [Eclipse IDE](https://www.eclipse.org/), which is the classic, multi-features, and tons of plugins.  This example project shows how to create the RTSDK - Java's Maven project with Eclipse. Developers do not need to run any commands manually via the command line. 
 
 Disclaimer: I am using the [IntelliJ IDEA](https://www.jetbrains.com/idea/) and [Visual Studio Code](https://code.visualstudio.com/) as my main IDE/editor.
 
 ## <a id="prerequisite"></a>Prerequisite
 
-In order to use the Eclipse IDE with Maven, you need the following software.
+To use the Eclipse IDE with Maven, you need the following software.
 
 ### Eclipse IDE
 
@@ -74,14 +74,68 @@ Let's open the IDE toolbar **Window -> Preferences** menu and choose **Maven -->
 
 Note: You need to install the [M2E plugin](https://github.com/eclipse-m2e/m2e-core/blob/master/README.md#-installation) before this step.
 
-Moving on the JDK setting. In the **Window -> Preferences** menu, choose **Java --> Installed JREs** option. Add you local JDK 11 installation path and tick the checkbox in front of it.
+Moving on to the JDK setting. In the **Window -> Preferences** menu, choose **Java --> Installed JREs** option. Add your local JDK 11 installation path and tick the checkbox in front of it.
 
 ![figure-6](images/07_eclipse_4.png "JDK setup")
 
-Stay in the  Java setting, choose **Compiler** option and set the **Compiler compliance level:** to **1.8**.
+Stay in the  Java setting, choose the **Compiler** option and set the **Compiler compliance level:** to **1.8**.
 
 ![figure-7](images/08_eclipse_5.png "JDK setup 2")
 
 ### Step 3: Create a new Maven Project
 
+That brings us to the Maven Project creation with Eclipse. You can create a new Maven project with the **File --> New --> Other..." menu option
+
+![figure-8](images/09_eclipse_6.png "New Eclipse Project")
+
+Then select the **Maven Project** option and click Next.
+
+![figure-9](images/10_eclipse_7.png "New Eclipse Project")
+
+Choose the **Create a simple project (skip archetype selection)** option, and then click the next button.
+
+![figure-10](images/11_eclipse_8.png "Create a simple Project")
+
+Now it is time to set the basic Maven pom.xml properties. I set this example project with the following properties:
+- Group Id: ```com.refinitiv.ema```
+- Artifact Id: ```EMA_Java_204L1_Maven```
+- Version: ```1.0.0-SNAPSHOT```
+- Name: ```EMA_Java_204L1_Maven```
+
+![figure-11](images/12_eclipse_9.png "Pom.xml basic set up")
+
+Then click the Finish button, a new Maven project is newly created. 
+
+![figure-12](images/13_eclipse_10.png "new project finish")
+
+### Step 4: Set up the Project setting for RTSDK
+
+Before we add the EMA Java code and configurations, there are some project-specific settings that we need to set them first.
+
+Right-click on the project in the Package Explorer panel, and choose the **Properties** option.
+
+![figure-13](images/14_eclipse_11.png "set Project properties")
+
+**Uncheck** the **Enable project specific settings** option.
+
+![figure-14](images/15_eclipse_12.png "set Project properties")
+
+### Step 5: Set up Maven Pom.xml file
+
+### Step 6: Add EMA Java Example Source Code to the Project
+
+The EMA Java example source code is available at the **RTSDK Java package/Java/Ema/Example/src/main** folder. 
+
+![figure-15](images/16_source_code_1.png "RTSDK Code 1")
+
+
+You can copy an entire **main** folder to replace the **Workspace/EMA_Java_204L1_Maven/src/main** folder.
+
+![figure-16](images/17_source_code_2.png "RTSDK Code 2")
+
+Then, right-click on the project and choose the **Refresh** option to make the newly added codes to the project. 
+
+![figure-17](images/18_source_code_3.png "RTSDK Code 3")
+
+Now the *EMA_Java_204L1_Maven* project and Eclipse IDE are ready to run the RTSDK Java.
 
