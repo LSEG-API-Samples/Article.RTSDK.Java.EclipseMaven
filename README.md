@@ -122,6 +122,51 @@ Right-click on the project in the Package Explorer panel, and choose the **Prope
 
 ### Step 5: Set up Maven Pom.xml file
 
+Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA Java application dependencies in the Maven pom.xml file. The EMA Java is the message-level API built on top of the ETA Java (Transport API), the Maven can automatic pull all dependency artifacts within Maven central for the application.
+
+```
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.refinitiv.ema</groupId>
+  <artifactId>EMA_Java_204L1_Maven</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>EMA_Java_204L1_Maven</name>
+
+   <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <rtsdk.version>3.6.4.0</rtsdk.version>
+        <javafx.version>11</javafx.version>
+    </properties>
+
+	 <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.refinitiv.ema</groupId>
+            <artifactId>ema</artifactId>
+            <version>${rtsdk.version}</version>
+        </dependency>
+		
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+		
+    </dependencies>
+</project>
+```
+
+You may noticed that I have added the [JavaFX](https://openjfx.io/) dependency to the Maven pom.xml file as well. This dependency is for the EMA GUI example.
+
 ### Step 6: Add EMA Java Example Source Code to the Project
 
 The EMA Java example source code is available at the **RTSDK Java package/Java/Ema/Example/src/main** folder. 
@@ -136,6 +181,8 @@ You can copy an entire **main** folder to replace the **Workspace/EMA_Java_204L1
 Then, right-click on the project and choose the **Refresh** option to make the newly added codes to the project. 
 
 ![figure-17](images/18_source_code_3.png "RTSDK Code 3")
+
+Next, copy the EMA Configuration **EmaConfig.xml** file from.
 
 Now the *EMA_Java_204L1_Maven* project and Eclipse IDE are ready to run the RTSDK Java.
 
