@@ -137,7 +137,7 @@ Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <rtsdk.version>3.6.4.0</rtsdk.version>
-        <javafx.version>11</javafx.version>
+        <javafx.version>15.0.1</javafx.version>
     </properties>
 
 	 <dependencies>
