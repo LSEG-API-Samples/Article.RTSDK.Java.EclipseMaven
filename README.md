@@ -46,11 +46,11 @@ The Refinitiv Real-Time SDK Java is now available in [Maven Central Repository](
 Note: 
 - This article is based on EMA Java version 3.6.4 L1 (RTSDK Java Edition 2.0.4 L1). 
 
-## The Basic of RTSDK Java with Maven
+## <a id="rtsdk_maven_basic"></a>The Basic of RTSDK Java with Maven
 
 This example project is focusing on setting the Eclipse IDE for the RTSDK Java project with Maven only. You can find the basic knowledge of how to use the RTSDK Java with Maven, Maven pom.xml setting for EMA Java, Standard Directory Layout, etc. from the [How to Set Up Refinitiv Real-Time SDK Java Application with Maven](https://developers.refinitiv.com/en/article-catalog/article/how-to-set-up-refinitiv-real-time-sdk-java-application-with-mave) article ([Medium](https://wasin-waeosri.medium.com/how-to-deploy-and-run-real-time-java-application-with-maven-in-docker-58e66dd1e247)).
 
-## IDE Set Up
+## <a id="ide_setup"></a>IDE Set Up
 
 ### Step 1: Creating a new workspace
 
@@ -122,7 +122,7 @@ Right-click on the project in the Package Explorer panel, and choose the **Prope
 
 ### Step 5: Set up Maven Pom.xml file
 
-Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA Java application dependencies in the Maven pom.xml file. The EMA Java is the message-level API built on top of the ETA Java (Transport API), the Maven can automatic pull all dependency artifacts within Maven central for the application.
+Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA Java application dependencies in the Maven pom.xml file. The EMA Java is the message-level API built on top of the ETA Java (Transport API), the Maven can automatically pull all dependency artifacts within Maven central for the application.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -165,7 +165,7 @@ Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA
 </project>
 ```
 
-You may noticed that I have added the [JavaFX](https://openjfx.io/) dependency to the Maven pom.xml file as well. This dependency is for the EMA GUI example.
+You may be noticed that I have added the [JavaFX](https://openjfx.io/) dependency to the Maven pom.xml file as well. This dependency is for the EMA GUI example.
 
 ### Step 6: Add EMA Java Example Source Code to the Project
 
@@ -182,7 +182,7 @@ Next, copy the EMA Configuration **EmaConfig.xml** file from the **RTSDK Java pa
 
 ![figure-17](images/18_config_etc_1.png "RTSDK EmaConfig.xml")
 
-Additionally, you may copy the local dictionary files folder (**RTSDK Java package/Java/etc/**) to the to the root folder of the EMA_Java_204L1_Maven project if you want to use local dictionary files.  
+Additionally, you may copy the local dictionary files folder (**RTSDK Java package/Java/etc/**) to the root folder of the EMA_Java_204L1_Maven project if you want to use local dictionary files.  
 
 ![figure-18](images/19_config_etc_2.png "RTSDK EmaConfig.xml")
 
@@ -190,7 +190,31 @@ You can find more detail about the EmaConfig.xml and local dictionary configurat
 
 Finally, right-click on the project and choose the **Refresh** option to make the newly added codes to the project. 
 
-![figure-17](images/20_source_code_3.png "RTSDK EmaConfig.xml")
+![figure-19](images/20_source_code_3.png "RTSDK EmaConfig.xml")
 
 Now the *EMA_Java_204L1_Maven* project and Eclipse IDE are ready to run the RTSDK Java.
+
+## <a id="rto_console"></a> Running the RTO Console Example.
+
+Let's start by running the Refinitiv Real-Time -- Optimized (RTO) example ex450_MP_QueryServiceDiscovery. Firstly, create a Run Configuration for the ex450_MP_QueryServiceDiscovery example application. 
+
+![figure-20](images/21_rto_running_1.png "Create a Run Configuration")
+
+I set a configuration name as *Consumer -example 450*. Please do not forget to set the Main class to *ex450_MP_QueryServiceDiscovery's Consumer
+
+![figure-21](images/22_rto_running_2.png "Create a Run Configuration")
+
+Next, click the Arguments tab, and input the RTO credentials as command-line arguments. You can check the list of supported parameters from the example readme and source code files.
+
+![figure-22](images/23_rto_running_3.png "Create a Run Configuration")
+
+Finally, click the Apply and Run buttons to start the RTO example.
+
+![figure-23](images/24_rto_running_4.png "Running result")
+
+You can find more detail about the Eclipse IDE Run and Run Configuration from the [TutorialsPoint](https://www.tutorialspoint.com/eclipse/eclipse_run_configuration.htm) page.
+
+## <a id="rto_GUI"></a> Running the GUI Example.
+
+
 
