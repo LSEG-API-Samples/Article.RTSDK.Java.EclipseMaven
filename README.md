@@ -178,11 +178,19 @@ You can copy an entire **main** folder to replace the **Workspace/EMA_Java_204L1
 
 ![figure-16](images/17_source_code_2.png "RTSDK Code 2")
 
-Then, right-click on the project and choose the **Refresh** option to make the newly added codes to the project. 
+Next, copy the EMA Configuration **EmaConfig.xml** file from the **RTSDK Java package/Java/Ema/** folder to the root folder of the EMA_Java_204L1_Maven project.
 
-![figure-17](images/18_source_code_3.png "RTSDK Code 3")
+![figure-17](images/18_config_etc_1.png "RTSDK EmaConfig.xml")
 
-Next, copy the EMA Configuration **EmaConfig.xml** file from.
+Additionally, you may copy the local dictionary files folder (**RTSDK Java package/Java/etc/**) to the to the root folder of the EMA_Java_204L1_Maven project if you want to use local dictionary files.  
+
+![figure-18](images/19_config_etc_2.png "RTSDK EmaConfig.xml")
+
+You can find more detail about the EmaConfig.xml and local dictionary configurations on the [Enterprise Message API (EMA) - Configuration Overview](https://developers.refinitiv.com/en/article-catalog/article/elektron-message-api-ema-configuration-overview) article.
+
+Finally, right-click on the project and choose the **Refresh** option to make the newly added codes to the project. 
+
+![figure-17](images/20_source_code_3.png "RTSDK EmaConfig.xml")
 
 Now the *EMA_Java_204L1_Maven* project and Eclipse IDE are ready to run the RTSDK Java.
 
