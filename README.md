@@ -2,7 +2,7 @@
 
 - version: 1.0.0
 - Last update: January 20222
-- Environment: Windows, Linux
+- Environment: Windows
 - Compiler: Java
 - Prerequisite: [Eclipse Maven prerequisite](#prerequisite)
 
