@@ -4,7 +4,7 @@
 - Last update: January 20222
 - Environment: Windows, Linux
 - Compiler: Java
-- Prerequisite: [Demo prerequisite](#prerequisite)
+- Prerequisite: [Eclipse Maven prerequisite](#prerequisite)
 
 ## <a id="Introduction"></a>Introduction
 
@@ -13,11 +13,11 @@
 
 The SDK has been mavenized to support [Apache Maven](https://maven.apache.org/) and [Gradle](https://gradle.org/) build automation tools since version 1.2. This supports helps Java developers to build the RTSDK Java application, manage its dependencies (Java Developers do not need to manually manage different versions of jar files anymore), and better collaboration in the team.
 
-The [previous article](https://developers.refinitiv.com/en/article-catalog/article/how-to-set-up-refinitiv-real-time-sdk-java-application-with-mave) ([Medium](https://wasin-waeosri.medium.com/how-to-deploy-and-run-real-time-java-application-with-maven-in-docker-58e66dd1e247)) shows how to set up the EMA Java project with Maven via a command line. However, many Java developers are still using the [Eclipse IDE](https://www.eclipse.org/), which is the classic, multi-features, and tons of plugins.  This example project shows how to create the RTSDK - Java's Maven project with Eclipse. Developers do not need to run any commands manually via the command line. 
+The [previous article](https://developers.refinitiv.com/en/article-catalog/article/how-to-set-up-refinitiv-real-time-sdk-java-application-with-mave) ([Medium](https://wasin-waeosri.medium.com/how-to-deploy-and-run-real-time-java-application-with-maven-in-docker-58e66dd1e247)) shows how to set up the EMA Java project with Maven via a command line. However, many developers are using the [Eclipse IDE](https://www.eclipse.org/) for Java application development. This example project shows how to create the RTSDK - Java's Maven project with Eclipse to get the library dynamically and run the EMA Java examples.  
 
 Disclaimer: I am using the [IntelliJ IDEA](https://www.jetbrains.com/idea/) and [Visual Studio Code](https://code.visualstudio.com/) as my main IDE/editor.
 
-## <a id="prerequisite"></a>Prerequisite
+## <a id="prerequisite"></a>Eclipse Maven Prerequisite
 
 To use the Eclipse IDE with Maven, you need the following software.
 
@@ -25,15 +25,17 @@ To use the Eclipse IDE with Maven, you need the following software.
 
 This example project is based on the Eclipse IDE for Java Developers version 2012-12 (4.22.0). You can download the installation package from [the Eclipse Foundation](https://www.eclipse.org/) website.
 
+If you are using a different version of Eclipse, some steps may be different, but the concept is still the same.
+
 ### Java SDK and Maven 
 
 You need the [Oracle Java Development Kit](https://jdk.java.net/) or [Open JDK](https://openjdk.java.net/), and [Apache Maven](https://maven.apache.org/) in your machine. Please check the RTSDK - Java README file or [API Compatibility Matrix file](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java/documentation) for more detail regarding the supported JDK versions.
 
-This project is based on the Open JDK version "11" (2018-09-25) and Maven 3.6.3
+This project is based on the Open JDK version "11" (2018-09-25) and Maven version 3.6.3.
 
 ### M2Eclipse
 
-The [M2Eclipse](https://www.eclipse.org/m2e/) plugin provides integration for Apache Maven into the Eclipse IDE. Please check the [Installation section](https://github.com/eclipse-m2e/m2e-core/blob/master/README.md#-installation) on the project GitHub page regarding how to install the plugin. 
+The [M2Eclipse](https://www.eclipse.org/m2e/) plugin provides integration for Apache Maven into the Eclipse IDE. Please check the [Installation section](https://github.com/eclipse-m2e/m2e-core/blob/master/README.md#-installation) on the project GitHub page about how to install the plugin. 
 
 ### Internet Access to Maven Central Repository
 
@@ -140,7 +142,7 @@ Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA
         <javafx.version>15.0.1</javafx.version>
     </properties>
 
-	 <dependencies>
+     <dependencies>
 
         <dependency>
             <groupId>junit</groupId>
@@ -154,13 +156,13 @@ Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA
             <artifactId>ema</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
-		
+        
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
         </dependency>
-		
+        
     </dependencies>
 </project>
 ```
@@ -216,21 +218,21 @@ You can find more detail about the Eclipse IDE Run and Run Configuration from th
 
 ## <a id="rto_GUI"></a> Running the GUI Example.
 
-The EMA Java GUI example is the Refinitiv Real-Time Market Data Viewer (RRTViewer). The RRTViewer supports the RSSL and WebSocket connections for both local RTDS and RTO deployment scenarios. This session covers the RTO with Service Discovery scenario only, but the GUI interface and flow of the RTDS scenario are not that different. 
+The EMA Java GUI example is the Refinitiv Real-Time Market Data Viewer (RRTViewer). The RRTViewer supports the RSSL and WebSocket connections for both local RTDS and RTO deployment scenarios. This session covers the RTO with the Service Discovery scenario only, but the GUI interface and flow of the RTDS scenario are not that different. 
 
 Firstly, create a Run Configuration for the RRTViewer example application. Please do not forget to set the Main class to *com.refinitiv.ema.examples.rrtmdviewer.desktop.RRTMDViewerDesktopMain class*.
 
 ![figure-24](images/25_gui_running_1.png "Create a Run Configuration")
 
-Then, click run to start the example application. The first screen lets you choosing between the following options:
+Then, click run to start the example application. The first screen lets you choose between the following options:
 - Discovery Endpoint: Connect to RTO with the Service Discovery
 - Specify Endpoint: Connect to your local RTDS server
 
-Let's choose *Discover Endpoint* options and then click the next button.
+Let's choose the *Discover Endpoint* options and then click the next button.
 
 ![figure-25](images/26_gui_running_2.png "Start RRTViewer")
 
-Next, input your RTO credentials and click the Retrieve Service Endpoints button. Please note that you can choose whether you want to connect wit the RSSL or WebSocket connection too.
+Next, input your RTO credentials and click the Retrieve Service Endpoints button. Please note that you can choose whether you want to connect with the RSSL or WebSocket connection too.
 
 ![figure-26](images/27_gui_running_3.png "RRTViewer input RTO credential")
 
@@ -244,8 +246,37 @@ Once the connection is succeeded, you can select the Real-Time service name, dat
 
 That's all for the Real-Time Market Data Viewer example. 
 
+## <a id="files_list"></a>Application Files
+This example project contains the following files and folders
+1. pom.xml: Example pom.xml file.
+2. LICENSE.md: Project's license file.
+3. README.md: Project's README file.
 
+## <a id="conclusion"></a>Conclusion
 
+Eclipse is one of the most popular IDEs for Java development. With the Maven integration (via the M2Eclipse plugin), developers can create and manage the development project faster than the old manual way. Developers do not need to manually maintain jars file dependencies anymore. This helps when updating the library versions, sharing the project among peers, and supports various build processes that match developers' workflow.   
 
+The RTSDK Java is now available in [Maven central repository](https://search.maven.org/) which makes Java developers can implement the Real-Time application with the build automation tools such as [Apache Maven](https://maven.apache.org/), [Gradle](https://gradle.org/). Java developers who are using the Eclipse IDE to set up the development project with the RTSDK Java by just adding the EMA or ETA API dependencies to the pom.xml file.
 
+Note: The IntelliJ IDEA already has built-in Maven (and Gradle) support. 
 
+## <a id="ref"></a>References
+
+For further details, please check out the following resources:
+* [Refinitiv Real-Time SDK Java page](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) web site.
+* [Refinitiv Real-Time SDK Family](https://developers.refinitiv.com/en/use-cases-catalog/refinitiv-real-time) page.
+* [Enterprise Message API Java Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java/quick-start)
+* [Developer Webinar: Introduction to Enterprise App Creation With Open-Source Enterprise Message API](https://www.youtube.com/watch?v=2pyhYmgHxlU)
+* [Developer Article: 10 important things you need to know before you write an Enterprise Real Time application](https://developers.refinitiv.com/article/10-important-things-you-need-know-you-write-elektron-real-time-application)
+* [Developer Article: How to Set Up Refinitiv Real-Time SDK Java Application with Maven](https://developers.refinitiv.com/en/article-catalog/article/how-to-set-up-refinitiv-real-time-sdk-java-application-with-mave).
+* [Developer Article: How to deploy and run Real-Time Java Application with Maven in Docker](https://developers.refinitiv.com/en/article-catalog/article/how-to-deploy-and-run-real-time-java-application-with-maven-in-d).
+* [Developer Article: Testing Real-time Streaming applications with Docker & Refinitiv Real-Time Connector (part 1)](https://developers.refinitiv.com/en/article-catalog/article/testing-real-time-apps-with-docker-and-real-time-connector).
+* [Developer Article: Testing Real-time Streaming applications with Docker & Refinitiv Real-Time Connector (part 2)](https://developers.refinitiv.com/en/article-catalog/article/testing-real-time-apps-with-docker-and-real-time-connector-2).
+* [Developer Article: How to use the Refinitiv Real-Time SDK Docker Images on the Visual Studio Code with the Remote - Containers extension](https://developers.refinitiv.com/en/article-catalog/article/how-to-use-the-refinitiv-real-time-sdk-docker-images-on-the-visu).
+* [Apache Maven Project page](https://www.apache.org/)
+* [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
+* [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+* [Maven Central Repository Search](https://search.maven.org/)
+* [Maven - Eclipse IDE tutorial](https://www.tutorialspoint.com/maven/maven_eclispe_ide.htm).
+
+For any questions related to this article or the RTSDK page, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/).
