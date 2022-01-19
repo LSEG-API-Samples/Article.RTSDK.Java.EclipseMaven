@@ -165,7 +165,7 @@ Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA
 </project>
 ```
 
-You may be noticed that I have added the [JavaFX](https://openjfx.io/) dependency to the Maven pom.xml file as well. This dependency is for the EMA GUI example.
+You may be noticed that I have added the [JavaFX](https://openjfx.io/) dependencies to the Maven pom.xml file as well. This dependency is for the EMA GUI example.
 
 ### Step 6: Add EMA Java Example Source Code to the Project
 
@@ -200,7 +200,7 @@ Let's start by running the Refinitiv Real-Time -- Optimized (RTO) example ex450_
 
 ![figure-20](images/21_rto_running_1.png "Create a Run Configuration")
 
-I set a configuration name as *Consumer -example 450*. Please do not forget to set the Main class to *ex450_MP_QueryServiceDiscovery's Consumer
+I set a configuration name as *Consumer -example 450*. Please do not forget to set the Main class to *ex450_MP_QueryServiceDiscovery's Consumer class*.
 
 ![figure-21](images/22_rto_running_2.png "Create a Run Configuration")
 
@@ -215,6 +215,37 @@ Finally, click the Apply and Run buttons to start the RTO example.
 You can find more detail about the Eclipse IDE Run and Run Configuration from the [TutorialsPoint](https://www.tutorialspoint.com/eclipse/eclipse_run_configuration.htm) page.
 
 ## <a id="rto_GUI"></a> Running the GUI Example.
+
+The EMA Java GUI example is the Refinitiv Real-Time Market Data Viewer (RRTViewer). The RRTViewer supports the RSSL and WebSocket connections for both local RTDS and RTO deployment scenarios. This session covers the RTO with Service Discovery scenario only, but the GUI interface and flow of the RTDS scenario are not that different. 
+
+Firstly, create a Run Configuration for the RRTViewer example application. Please do not forget to set the Main class to *com.refinitiv.ema.examples.rrtmdviewer.desktop.RRTMDViewerDesktopMain class*.
+
+![figure-24](images/25_gui_running_1.png "Create a Run Configuration")
+
+Then, click run to start the example application. The first screen lets you choosing between the following options:
+- Discovery Endpoint: Connect to RTO with the Service Discovery
+- Specify Endpoint: Connect to your local RTDS server
+
+Let's choose *Discover Endpoint* options and then click the next button.
+
+![figure-25](images/26_gui_running_2.png "Start RRTViewer")
+
+Next, input your RTO credentials and click the Retrieve Service Endpoints button. Please note that you can choose whether you want to connect wit the RSSL or WebSocket connection too.
+
+![figure-26](images/27_gui_running_3.png "RRTViewer input RTO credential")
+
+Then, the example application authenticates with the RDP Auth Service and gets the list of endpoints from the RDP Service Discovery. You can select the endpoint that you want to connect to and then click the connect button.
+
+![figure-27](images/28_gui_running_4.png "RRTViewer service discovery")
+
+Once the connection is succeeded, you can select the Real-Time service name, data domain, input RICs name, set the subscription properties, and then click the submit button. The real-time data is shown on the right panel.
+
+![figure-28](images/29_gui_running_5.png "RRTViewer running result")
+
+That's all for the Real-Time Market Data Viewer example. 
+
+
+
 
 
 
