@@ -1,7 +1,7 @@
 # How to Set Up Real-Time SDK Java Application with Maven on the Eclipse IDE
 
 - version: 1.0.0
-- Last update: January 20222
+- Last update: January 2022
 - Environment: Windows
 - Compiler: Java
 - Prerequisite: [Eclipse Maven prerequisite](#prerequisite)
