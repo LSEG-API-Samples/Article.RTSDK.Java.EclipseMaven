@@ -1,7 +1,7 @@
 # How to Set Up Real-Time SDK Java Application with Maven on the Eclipse IDE
 
-- version: 1.0.0
-- Last update: January 2022
+- version: 1.0.1
+- Last update: October 2022
 - Environment: Windows
 - Compiler: Java
 - Prerequisite: [Eclipse Maven prerequisite](#prerequisite)
@@ -125,6 +125,8 @@ Right-click on the project in the Package Explorer panel, and choose the **Prope
 ### Step 5: Set up Maven Pom.xml file
 
 Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA Java application dependencies in the Maven pom.xml file. The EMA Java is the message-level API built on top of the ETA Java (Transport API), the Maven can automatically pull all dependency artifacts within Maven central for the application.
+
+**Update Oct 2022**: For RTSDK version 2.0.7.L1, please set the RTSDK version as ```3.6.7.1``` in the pom.xml file.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -280,3 +282,8 @@ For further details, please check out the following resources:
 * [Maven - Eclipse IDE tutorial](https://www.tutorialspoint.com/maven/maven_eclispe_ide.htm).
 
 For any questions related to this article or the RTSDK page, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/).
+
+## <a id="articles"></a>Developers Articles:
+
+* [How to Set Up Real-Time SDK Java Application with Maven on the Eclipse IDE](https://developers.refinitiv.com/en/article-catalog/article/how-to-set-up-real-time-sdk-java-application-with-maven-on-the-e) on the the [Refinitiv Developer Community](https://developers.refinitiv.com/) web site.
+* [How to Set Up Real-Time SDK Java Application with Maven on the Eclipse IDE](https://medium.com/refinitiv-developer-community/how-to-set-up-real-time-sdk-java-application-with-maven-on-the-eclipse-ide-37f2d1b9f3b4) on the Medium blog post.
