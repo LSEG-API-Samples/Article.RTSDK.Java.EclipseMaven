@@ -126,7 +126,9 @@ Right-click on the project in the Package Explorer panel, and choose the **Prope
 
 Open the Project's *pom.xml* file in the Eclipse IDE, then set the following EMA Java application dependencies in the Maven pom.xml file. The EMA Java is the message-level API built on top of the ETA Java (Transport API), the Maven can automatically pull all dependency artifacts within Maven central for the application.
 
-**Update Oct 2022**: For RTSDK version 2.0.7.L1, please set the RTSDK version as ```3.6.7.1``` in the pom.xml file.
+**Update Nov 2022**: 
+- For RTSDK version 2.0.7.**L1**, please specify the RTSDK version as **3.6.7.1** in the pom.xml file.
+- For RTSDK version 2.0.7.**L2**, please specify the RTSDK version as **3.6.7.3** in the pom.xml file.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
